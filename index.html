@@ -27,12 +27,11 @@
 <body onload="doTests()">
 
 <label for="greekText">Greek text</label><br/>
-<textarea id="greekText" cols="80" rows="8"></textarea>
+<textarea id="greekText" cols="80" rows="8" onkeyup="transcribe()"> </textarea>
 <hr/>
 <label for="latinText">Transcribed text</label><br/>
 <textarea id="latinText" cols="80" rows="8"></textarea>
 <br/>
-<input type="button" onclick="transcribe()" value="Transcribe"/>
 
 </body>
 </html>
