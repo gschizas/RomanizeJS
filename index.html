@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="application/javascript" src="Romanize.js"></script>
+    <script type="application/javascript">
+        function transcribe() {
+            document.getElementById("latinText").value = romanizeText(document.getElementById("greekText").value);
+        }
+        function doTests() {
+            console.assert(romanizeText("Γιώργος Σχίζας") == "Giorgos Schizas");
+            console.assert(romanizeText("Θανάσης ΘΑΝΑΣΗΣ θΑνάσης ΘΑνάσης") == "Thanasis THANASIS thAnasis THAnasis");
+            console.assert(romanizeText("Αντώνης Ψαράς με ψάρια") == "Antonis Psaras me psaria");
+            console.assert(romanizeText("Αυγά αύριο παύση") == "Avga avrio pafsi");
+            console.assert(romanizeText("Άγγελος αρχάγγελος") == "Angelos archangelos");
+            console.assert(romanizeText("Ξάδελφος εξ αγχιστείας") == "Xadelfos ex anchisteias");
+            console.assert(romanizeText("Ακούμπα κάτω τα μπαούλα Γιακούμπ") == "Akoumpa kato ta baoula Giakoub");
+            console.assert(romanizeText("Ζεύξη Ρίου-Αντιρρίου") == "Zefxi Riou-Antirriou");
+            console.assert(romanizeText("μεταγραφή") == "metagrafi");
+            console.assert(romanizeText("Ούτε το αγγούρι ούτε η αγκινάρα γράφονται με γξ") == "Oute to angouri oute i agkinara grafontai me nx");
+            console.assert(romanizeText("ΟΥΡΑΝΟΣ Ουρανός ουρανός οϋρανός") == "OURANOS Ouranos ouranos oyranos");
+            console.assert(romanizeText("Έχω ελέγξει το 100% της μεθόδου") == "Echo elenxei to 100% tis methodou");
+        }
+    </script>
+</head>
+<body onload="doTests()">
+
+<label for="greekText">Greek text</label><br/>
+<textarea id="greekText" cols="80" rows="8"></textarea>
+<hr/>
+<label for="latinText">Transcribed text</label><br/>
+<textarea id="latinText" cols="80" rows="8"></textarea>
+<br/>
+<input type="button" onclick="transcribe()" value="Transcribe"/>
+
+</body>
+</html>
