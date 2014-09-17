@@ -41,26 +41,26 @@ function romanizeText(greekText) {
             if (nextLetter == "υ" || nextLetter == "ύ") {
                 if (digraphYpsilonBeta.indexOf(thirdLetter) >= 0) {
                     newLetter += "v";
-                    cursor += 1;
+                    cursor++;
                 }
                 else if (digraphYpsilonPhi.indexOf(thirdLetter) >= 0) {
                     newLetter += "f";
-                    cursor += 1;
+                    cursor++;
                 }
             }
         }
         else if (letter == "γ") {
             if (nextLetter == "γ") {
                 newLetter = "ng";
-                cursor += 1;
+                cursor++;
             }
             else if (nextLetter == "ξ") {
                 newLetter = "nx";
-                cursor += 1;
+                cursor++;
             }
             else if (nextLetter == "χ") {
                 newLetter = "nch";
-                cursor += 1;
+                cursor++;
             }
             else {
                 newLetter = "g";
@@ -70,11 +70,11 @@ function romanizeText(greekText) {
             if (nextLetter == "π") {
                 if (previousLetter.trim() == "" || thirdLetter.trim() == "") {
                     newLetter = "b";
-                    cursor += 1;
+                    cursor++;
                 }
                 else {
                     newLetter = "mp";
-                    cursor += 1;
+                    cursor++;
                 }
             }
             else {
@@ -85,7 +85,7 @@ function romanizeText(greekText) {
             newLetter = "o";
             if (nextLetter == "υ" || nextLetter == "ύ") {
                 newLetter += "u";
-                cursor += 1;
+                cursor++;
             }
         }
         else {
